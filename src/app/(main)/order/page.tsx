@@ -479,12 +479,12 @@ export default function OrderPage() {
                 ? "bg-red-100 text-red-700"
                 : order.status === "diproses"
                 ? "bg-blue-100 text-blue-700"
-                : order.status === "dikirim"
+                : (order.status as string) === "dikirim"
                 ? "bg-purple-100 text-purple-700"
                 : "bg-slate-100 text-slate-700"
             }`}
           >
-            {STATUS_OPTIONS.find((s) => s.value === order.status)?.label}
+            {STATUS_OPTIONS.find((s) => (s.value as string) === order.status)?.label}
           </span>
                       </td>
                       <td className="px-5 py-3 text-right">
